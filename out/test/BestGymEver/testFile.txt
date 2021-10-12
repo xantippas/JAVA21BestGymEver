@@ -1,0 +1,6 @@
+1234567891, Anna Andersson
+2020-01-01
+3456789123, Bob Bodilsson
+2019-10-10
+5678912345, Carla Carrington
+2021-08-12
