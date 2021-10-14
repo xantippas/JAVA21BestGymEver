@@ -53,7 +53,7 @@ class ValidateGymMembershipTest {
         nameOfMember = member.substring(index+2);
         personNummer = member.substring(0,index);
 
-        dateMemberLastPaid = tempList.get(0+1);
+        dateMemberLastPaid = tempList.get(1);
 
         assertTrue(nameOfMember.equals("anna andersson"));
         assertTrue(personNummer.equals("1234567891"));
@@ -68,23 +68,6 @@ class ValidateGymMembershipTest {
         System.setIn(in);
 
         assertTrue(testObject.getReceptionistInput().equals(input));
-    }
-
-    @Test
-    void capitalizeMembersNameTest(){
-        String name = "anna andersson";
-        int findLastName = name.indexOf(" ");
-
-        String firstLetter = name.substring(0,1).toUpperCase();
-        String remLetters = name.substring(1,findLastName);
-
-        String secondNameLetter = name.substring(findLastName+1, findLastName+2).toUpperCase();
-        String remLettersLastname = name.substring(findLastName+2);
-
-        String fullname = firstLetter + remLetters + " " + secondNameLetter + remLettersLastname;
-
-        assertEquals("Anna Andersson", fullname);
-        assertFalse(fullname.equals("anna andersson"));
     }
 
     @Test
@@ -139,5 +122,22 @@ class ValidateGymMembershipTest {
         assertFalse(tempList.get(1).equals("2020-10-09"));
         assertTrue(tempList.get(1).equals(date));
 
+    }
+
+    @Test
+    void capitalizeMembersNameTest(){
+        String name = "anna andersson";
+        int findLastName = name.indexOf(" ");
+
+        String firstLetter = name.substring(0,1).toUpperCase();
+        String remLetters = name.substring(1,findLastName);
+
+        String secondNameLetter = name.substring(findLastName+1, findLastName+2).toUpperCase();
+        String remLettersLastname = name.substring(findLastName+2);
+
+        String fullname = firstLetter + remLetters + " " + secondNameLetter + remLettersLastname;
+
+        assertEquals("Anna Andersson", fullname);
+        assertFalse(fullname.equals("anna andersson"));
     }
 }
